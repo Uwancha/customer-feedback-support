@@ -1,8 +1,10 @@
-import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Put, UseGuards } from '@nestjs/common';
 import { TicketService } from './ticket.service';
 import { TicketDocument } from './schemas/ticket.schema';
 import { CreateTicketDto } from './dto/create-ticket-dto';
+import { AuthenticationGuard } from 'src/authentication/authentication.guard';
 
+@UseGuards(AuthenticationGuard)
 @Controller('tickets')
 export class TicketController {
     constructor(private ticketService: TicketService) {}

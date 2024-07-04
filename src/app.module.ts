@@ -6,6 +6,7 @@ import { FeedbackModule } from './feedback/feedback.module';
 import { TicketModule } from './ticket/ticket.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
+import { AuthenticationModule } from './authentication/authentication.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { MongooseModule } from '@nestjs/mongoose';
     UserModule,
     FeedbackModule,
     TicketModule,
+    AuthenticationModule,
   ],
   controllers: [AppController],
   providers: [AppService],
